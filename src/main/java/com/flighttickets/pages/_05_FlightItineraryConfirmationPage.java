@@ -33,10 +33,12 @@ public class _05_FlightItineraryConfirmationPage {
      * Price accepts int argument
      * @param price
      */
-    public void printItineraryConfirmation(int price) {
+    public String getPrice(int price) {
         this.wait.until(ExpectedConditions.visibilityOf(this.flightConfirmationText));
         System.out.println(this.flightConfirmationText.getText());
         System.out.println(this.prices.get(price).getText());
+        String ticketPrice = this.prices.get(price).getText();
         this.signOffLink.click();
+        return ticketPrice;
     }
 }

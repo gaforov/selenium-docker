@@ -1,0 +1,35 @@
+<suite name="search-module">
+
+    <!--    Searching videos for 'java' keyword-->
+    <test name="search-java-videos">
+        <parameter name="searchKeyword" value="java"/>
+        <classes>
+            <class name="com.search.tests.SearchTests"/>
+        </classes>
+    </test>
+
+    <!--    Searching videos for 'qa' keyword-->
+    <test name="search-qa-videos">
+        <parameter name="searchKeyword" value="qa"/>
+        <classes>
+            <class name="com.search.tests.SearchTests"/>
+        </classes>
+    </test>
+
+    <!--    Searching videos for 'webdriver' keyword-->
+    <test name="search-webdriver-videos">
+        <parameter name="searchKeyword" value="webdriver"/>
+        <classes>
+            <class name="com.search.tests.SearchTests"/>
+        </classes>
+    </test>
+
+    <!--    Searching videos for 'kubernetes' keyword-->
+    <test name="search-kubernetes-videos">
+        <parameter name="searchKeyword" value="kubernetes"/>
+        <classes>
+            <class name="com.search.tests.SearchTests"/>
+        </classes>
+    </test>
+
+</suite>

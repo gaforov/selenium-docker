@@ -1,26 +1,21 @@
 package com.flighttickets.tests;
 
 import com.flighttickets.pages.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
+import com.tests.BaseTest;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class BookFlightTests {
-    private WebDriver driver;
+public class BookFlightTests extends BaseTest {
     private String noOfPassengers;
     private String expectedPrice;
 
     @BeforeTest
     @Parameters({"noOfPassengers", "expectedPrice"})
-    public void setupDriver(String noOfPassengers, String expectedPrice) {
+    public void setupParameters(String noOfPassengers, String expectedPrice) {
         this.noOfPassengers = noOfPassengers;
         this.expectedPrice = expectedPrice;
-        WebDriver driver = WebDriverManager.chromedriver().create();
-        this.driver = driver;
     }
 
     @Test
@@ -59,8 +54,4 @@ public class BookFlightTests {
         Assert.assertEquals(actualPrice, expectedPrice, "Price mismatch");
     }
 
-    @AfterTest
-    public void tearDown() {
-        this.driver.quit();
-    }
 }

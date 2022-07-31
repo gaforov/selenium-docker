@@ -1,4 +1,4 @@
-<suite name="book-flight-module">
+<suite name="book-flight-module" parallel="tests">
 
     <!--    Test for 1 passenger -->
     <test name="book-flight-1-pass">
